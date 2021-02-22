@@ -12,15 +12,12 @@
 
             <div class="col-lg-3">
 
-                <h1 class="my-4">GeekShop</h1>
+                <h1 class="my-4">{{ title|title}}</h1>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Новинки</a>
-                    <a href="#" class="list-group-item">Одежда</a>
-                    <a href="#" class="list-group-item">Обувь</a>
-                    <a href="#" class="list-group-item">Аксессуары</a>
-                    <a href="#" class="list-group-item">Подарки</a>
+                    {% for offer in offer_sheet %}
+                    <a href="#" class="list-group-item">{{offer}}</a>
+                    {% endfor %}
                 </div>
-
             </div>
             <!-- /.col-lg-3 -->
 
