@@ -14,8 +14,8 @@
 
                 <h1 class="my-4">{{ title|title}}</h1>
                 <div class="list-group">
-                    {% for offer in offer_sheet %}
-                    <a href="#" class="list-group-item">{{offer}}</a>
+                    {% for category in categories %}
+                    <a href="#" class="list-group-item">{{category}}</a>
                     {% endfor %}
                 </div>
             </div>
@@ -55,12 +55,12 @@
 
                 <div class="row">
 
-                {% for product in products_json %}
+                {% for product in products %}
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
                             <a href="#">
                                 <img class="card-img-top"
-                                     src="{% static 'vendor/img/products/'|add:product.image %}"
+                                     src="/media/{{ product.image }}"
                                      alt="">
                             </a>
                             <div class="card-body">
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 {% endfor %}
-                  
+
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
