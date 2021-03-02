@@ -19,7 +19,7 @@
                       -20% новым покупателям зарегистрировавшимся сегодня ({% now  "j.m.Y" %}г.).
                     </p>
                     <button id="start-purchase-btn" type="button" class="btn btn-lg">
-                        <a id="start-purchase-link" href="{% url 'products' %}">
+                        <a id="start-purchase-link" href="{% url 'products:index' %}">
                             {{ start_buy }}
                         </a>
                     </button>

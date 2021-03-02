@@ -16,7 +16,8 @@ def index(request):
     }
     return render(request, 'mainapp/index.html', context)
 
-def products(request):
+def products(request, pk=None):
+    print(pk)
     context = {
         'title': 'GeekShop - Каталог',
         'categories': ProductCategory.objects.all(),
