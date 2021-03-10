@@ -34,3 +34,6 @@ def register(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+def profile(request):
+    return render(request, 'authapp/profile.html')
