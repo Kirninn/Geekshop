@@ -21,10 +21,13 @@ from django.conf.urls import include
 
 from mainapp.views import index, products
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'index'),
     path('products/', include('mainapp.urls', namespace = 'products')),
+    path('auth/', include('authapp.urls', namespace = 'auth')),
+    path('baskets/', include('basketapp.urls', namespace = 'baskets')),
 ]
 
 if settings.DEBUG:
