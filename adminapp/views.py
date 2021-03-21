@@ -3,7 +3,7 @@ from django.urls import reverse
 
 from authapp.models import User
 from adminapp.forms import UserAdminRegistrationForm, UserAdminProfileForm
-from admin.contrid.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import user_passes_test
 
 @user_passes_test(lambda u: u.is_superuser, login_url = '/')
 def index(request):
