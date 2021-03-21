@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>GeekShop - Admin</title>
+    <title>{{ title }}</title>
     <link href="{% static 'css/auth-admin.cs' %}s" rel="stylesheet"/>
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
           crossorigin="anonymous"/>
@@ -128,16 +128,17 @@
                             </div>
                         </div>
                       </form>
-                    <div class="row">
-                        <div class="col-lg-12" style="margin-top: 33px;">
-                          <a href="{% url 'admin_staff:admin_users_delete' user.id %}">
-                            <button class="btn btn-danger btn-block">Удалить</button>
-                          </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+                      <div class="row">
+                          <div class="col-lg-12" style="margin-top: 33px;">
+                              <form action="{% url 'admin_staff:admin_users_delete' user.id %}" method="post">
+                                  {% csrf_token %}
+                                  <input class="btn btn-danger btn-block" type="submit" value="Удалить">
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </main>
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-between small">
