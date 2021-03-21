@@ -105,12 +105,15 @@
                                 {% for user in users %}
                                     <tbody>
                                     <tr>
-                                        <td><a href="#" style="color: dodgerblue">{{ user.username}}</a></td>
+                                        <td><a href="{% url 'admin_staff:admin_users_update' user.id %}" style="color: dodgerblue">{{ user.username}}</a></td>
                                         <td>{{ user.first_name }}</td>
                                         <td>{{ user.last_name }}</td>
                                         <td>{{ user.email }}</td>
-                                        <td class="text-center"><i class="fas fa-check-circle"></i></td>
-                                        <td class="text-center"><i class="fas fa-check-circle"></i></td>
+                                          {% if user.is_staff %}
+                                              <i class="fas fa-check-circle"></i></td>
+                                          {% else %}
+                                              <i class="fas fa-check-circle"></i></td>
+                                          {% endif %}
                                     </tr>
                                 {% endfor %}
                                 </tbody>
